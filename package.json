@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/ganoninc/nombre-en-toutes-lettres/issues"
   },
-  "homepage": "https://github.com/ganoninc/nombre-en-toutes-lettres#readme"
+  "homepage": "https://github.com/ganoninc/nombre-en-toutes-lettres#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
 }
