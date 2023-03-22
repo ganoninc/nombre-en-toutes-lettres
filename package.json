@@ -1,0 +1,33 @@
+{
+  "name": "nombre-en-toutes-lettres",
+  "version": "1.0.0",
+  "description": "A javascript library to convert numbers to their french written form.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganoninc/nombre-en-toutes-lettres.git"
+  },
+  "keywords": [
+    "nombre",
+    "nombres",
+    "number",
+    "numbers",
+    "lettres",
+    "letters",
+    "written form",
+    "convert",
+    "1990",
+    "french",
+    "français",
+    "francais"
+  ],
+  "author": "Romain Giovanetti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ganoninc/nombre-en-toutes-lettres/issues"
+  },
+  "homepage": "https://github.com/ganoninc/nombre-en-toutes-lettres#readme"
+}
