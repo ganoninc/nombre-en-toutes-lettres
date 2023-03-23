@@ -4,12 +4,14 @@
   "description": "A javascript library to convert numbers to their french written form.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
+    "testInBackground": "node --experimental-vm-modules ./node_modules/.bin/jest --watchAll"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ganoninc/nombre-en-toutes-lettres.git"
   },
+  "type": "module",
   "keywords": [
     "nombre",
     "nombres",
