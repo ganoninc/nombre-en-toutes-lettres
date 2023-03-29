@@ -300,6 +300,73 @@ function getLetters(number) {
   return result.trim();
 }
 
+function removeMinusSignsSurroundingMilliard(numberInWrittenForm) {
+  try {
+    let p = numberInWrittenForm.indexOf("milliards");
+    if (p !== -1) {
+      numberInWrittenForm =
+        numberInWrittenForm.substring(0, p - 1) +
+        " " +
+        numberInWrittenForm.substring(p, p + 9) +
+        " " +
+        numberInWrittenForm.substring(p + 10);
+      return numberInWrittenForm;
+    }
+    p = numberInWrittenForm.indexOf("milliard");
+    if (p !== -1) {
+      numberInWrittenForm =
+        numberInWrittenForm.substring(0, p - 1) +
+        " " +
+        numberInWrittenForm.substring(p, p + 8) +
+        " " +
+        numberInWrittenForm.substring(p + 9);
+      return numberInWrittenForm;
+    }
+  } catch (error) {
+    numberInWrittenForm = numberInWrittenForm.replace("-", " ");
+  }
+  return numberInWrittenForm;
+}
+
+function removeMinusSignsSurroundingMillion(numberInWrittenForm) {
+  try {
+    let p = numberInWrittenForm.indexOf("millions");
+    if (p !== -1) {
+      numberInWrittenForm =
+        numberInWrittenForm.substring(0, p - 1) +
+        " " +
+        numberInWrittenForm.substring(p, p + 8) +
+        " " +
+        numberInWrittenForm.substring(p + 9);
+      return numberInWrittenForm;
+    }
+    p = numberInWrittenForm.indexOf("million");
+    if (p != -1) {
+      numberInWrittenForm =
+        numberInWrittenForm.substring(0, p - 1) +
+        " " +
+        numberInWrittenForm.substring(p, p + 7) +
+        " " +
+        numberInWrittenForm.substring(p + 8);
+      return numberInWrittenForm;
+    }
+  } catch (error) {
+    numberInWrittenForm = numberInWrittenForm.replace("-", " ");
+  }
+
+  return numberInWrittenForm;
+}
+
+function removeMinusSignsSurroundingVirgule(numberInWrittenForm) {
+  let p = numberInWrittenForm.indexOf("-virgule-");
+  if (p !== -1) {
+    let s = numberInWrittenForm.split("-virgule-");
+    numberInWrittenForm = s[0] + " virgule " + s[1];
+  }
+
+  return numberInWrittenForm;
+}
+
 export function NombresEnToutesLettres() {
   return "Hello world!";
 }
@@ -309,4 +376,7 @@ export const exportedForTesting = {
   getGroupInWrittenForm,
   getLetters,
   convert,
+  removeMinusSignsSurroundingMilliard,
+  removeMinusSignsSurroundingMillion,
+  removeMinusSignsSurroundingVirgule,
 };
