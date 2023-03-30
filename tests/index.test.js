@@ -156,7 +156,33 @@ describe("NombreEnToutesLettres class", () => {
     expect(() => convertToRecommandation1990({})).toThrow();
   });
 
-  it('returns "Hello world!"', () => {
-    expect(NombresEnToutesLettres()).toBe("Hello world!");
+  it("returns the passed number in its french written form, and applies the 1990 recommandations if requested", () => {
+    expect(NombresEnToutesLettres(1949)).toBe("mille neuf cent quarante-neuf");
+    expect(NombresEnToutesLettres("1949")).toBe(
+      "mille neuf cent quarante-neuf"
+    );
+    expect(NombresEnToutesLettres(293955.742)).toBe(
+      "deux cent quatre-vingt-treize mille neuf cent cinquante-cinq virgule sept cent quarante-deux"
+    );
+    expect(NombresEnToutesLettres("9075.9221")).toBe(
+      "neuf mille soixantequinze virgule neuf mille deux cent vingt et un"
+    );
+
+    expect(NombresEnToutesLettres(1949, true)).toBe(
+      "mille-neuf cent quarante-neuf"
+    );
+    expect(NombresEnToutesLettres("1949", true)).toBe(
+      "mille-neuf cent quarante-neuf"
+    );
+    expect(NombresEnToutesLettres(293955.742, true)).toBe(
+      "deux-cent quatre-vingt-treize mille neuf cent cinquante-cinq virgule sept cent quarante-deux"
+    );
+    expect(NombresEnToutesLettres("9075.9221", true)).toBe(
+      "neuf-mille soixantequinze virgule neuf mille deux cent vingt et un"
+    );
+
+    expect(() => NombresEnToutesLettres(null)).toThrow();
+    expect(() => NombresEnToutesLettres(undefined)).toThrow();
+    expect(() => NombresEnToutesLettres({})).toThrow();
   });
 });

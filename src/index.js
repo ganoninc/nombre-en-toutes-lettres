@@ -377,8 +377,23 @@ function convertToRecommandation1990(numberInWrittenForm) {
   return numberInWrittenForm;
 }
 
-export function NombresEnToutesLettres() {
-  return "Hello world!";
+export function NombresEnToutesLettres(
+  number,
+  mustFollow1990Recommandations = false
+) {
+  if (number === null || number === undefined || isNaN(number)) {
+    throw new Error("The passed argument is not a number");
+  }
+
+  if (typeof Numbernumber !== "number") {
+    number = number.toString();
+  }
+  let result = convert(number);
+
+  if (mustFollow1990Recommandations)
+    result = convertToRecommandation1990(result);
+
+  return result;
 }
 
 export const exportedForTesting = {
