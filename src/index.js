@@ -367,6 +367,16 @@ function removeMinusSignsSurroundingVirgule(numberInWrittenForm) {
   return numberInWrittenForm;
 }
 
+function convertToRecommandation1990(numberInWrittenForm) {
+  numberInWrittenForm = numberInWrittenForm.replace(" ", "-");
+
+  numberInWrittenForm =
+    removeMinusSignsSurroundingMilliard(numberInWrittenForm);
+  numberInWrittenForm = removeMinusSignsSurroundingMillion(numberInWrittenForm);
+  numberInWrittenForm = removeMinusSignsSurroundingVirgule(numberInWrittenForm);
+  return numberInWrittenForm;
+}
+
 export function NombresEnToutesLettres() {
   return "Hello world!";
 }
@@ -379,4 +389,5 @@ export const exportedForTesting = {
   removeMinusSignsSurroundingMilliard,
   removeMinusSignsSurroundingMillion,
   removeMinusSignsSurroundingVirgule,
+  convertToRecommandation1990,
 };

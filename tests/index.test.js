@@ -9,6 +9,7 @@ const {
   removeMinusSignsSurroundingMilliard,
   removeMinusSignsSurroundingMillion,
   removeMinusSignsSurroundingVirgule,
+  convertToRecommandation1990,
 } = exportedForTesting;
 
 describe("NombreEnToutesLettres class", () => {
@@ -139,6 +140,20 @@ describe("NombreEnToutesLettres class", () => {
     expect(() => removeMinusSignsSurroundingVirgule(null)).toThrow();
     expect(() => removeMinusSignsSurroundingVirgule(undefined)).toThrow();
     expect(() => removeMinusSignsSurroundingVirgule({})).toThrow();
+  });
+
+  it("converts a number in its written form to 1990 recommendation written form", () => {
+    expect(
+      convertToRecommandation1990(
+        "quatre-milliards-cinq-cent-vingt-neuf-millions-neuf-cent-quatre-vingt-dix-neuf-mille-neuf-cent-quatre-vingt-dix-neuf-virgule-vingt-trois"
+      )
+    ).toBe(
+      "quatre milliards cinq-cent-vingt-neuf millions neuf-cent-quatre-vingt-dix-neuf-mille-neuf-cent-quatre-vingt-dix-neuf virgule vingt-trois"
+    );
+
+    expect(() => convertToRecommandation1990(null)).toThrow();
+    expect(() => convertToRecommandation1990(undefined)).toThrow();
+    expect(() => convertToRecommandation1990({})).toThrow();
   });
 
   it('returns "Hello world!"', () => {
