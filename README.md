@@ -31,6 +31,18 @@ import { NombresEnToutesLettres } from "nombre-en-toutes-lettres";
 NombresEnToutesLettres(193954.56564, true); // "cent-quatre-vingt-treize mille neuf cent cinquante-quatre virgule cinquante-six mille cinq cent soixante-quatre"
 ```
 
+## Unit tests
+
+To run the different unit tests, run the following commands:
+
+```bash
+npm i # install Jest
+
+npm run test # run all the tests once
+
+npm run testInBackground # run all the tests in background, and on each file change.
+```
+
 ## Copyright and license
 
 Code released under the MIT License.
