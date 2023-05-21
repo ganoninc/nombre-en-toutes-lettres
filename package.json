@@ -1,6 +1,6 @@
 {
   "name": "nombre-en-toutes-lettres",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A javascript library to convert numbers to their french written form.",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",
