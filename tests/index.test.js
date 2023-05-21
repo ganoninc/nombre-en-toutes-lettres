@@ -181,6 +181,10 @@ describe("NombreEnToutesLettres class", () => {
       "neuf-mille soixantequinze virgule neuf mille deux cent vingt et un"
     );
 
+    expect(NombresEnToutesLettres("193954.56564", true)).toBe(
+      "cent-quatre-vingt-treize mille neuf cent cinquante-quatre virgule cinquante-six mille cinq cent soixante-quatre"
+    );
+
     expect(() => NombresEnToutesLettres(null)).toThrow();
     expect(() => NombresEnToutesLettres(undefined)).toThrow();
     expect(() => NombresEnToutesLettres({})).toThrow();

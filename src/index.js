@@ -106,11 +106,12 @@ function getGroupInWrittenForm(groupAsNumber) {
 
   if (groupAsNumber > 100) {
     // If the group value > 199,  then we placed ahead to count of hundreds
-    if (groupAsNumber / 100 > 1)
+    if (Math.floor(groupAsNumber / 100) > 1)
       result = getDigitInWrittenForm(Math.floor(groupAsNumber / 100)) + " ";
 
     result += CENT;
-    if (groupAsNumber / 100 > 1 && groupAsNumber % 100 == 0) result += "s ";
+    if (Math.floor(groupAsNumber / 100) > 1 && groupAsNumber % 100 == 0)
+      result += "s ";
     else result += " ";
 
     groupAsNumber = groupAsNumber % 100;
